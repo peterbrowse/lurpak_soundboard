@@ -12,12 +12,12 @@ var app = express();
 
 //Setup App
 if ('development' == app.get('env')) {
-	app.locals.pretty = true;
+	app.locals.pretty = false;
 	app.use(sassMiddleware({
 		debug: true,
 		src: __dirname + '/sass',
 		dest: __dirname + '/public',
-		outputStyle: 'extended'
+		outputStyle: 'compressed'
 	}));
 	app.use(errorhandler({ dumpExceptions: true, showStack: true })); 
 }
@@ -42,5 +42,5 @@ app.use(express.static(__dirname + '/public'));
 require('./app/routes.js')(app);
 
 var listener = app.listen(process.env.PORT || 8080, function () {
-	console.log("Info: 'Summer is Gone' listening on port " + listener.address().port + " in " + process.env.NODE_ENV + " mode.");
+	console.log("Info: 'Lurpak Soundboard' listening on port " + listener.address().port + " in " + process.env.NODE_ENV + " mode.");
 });
