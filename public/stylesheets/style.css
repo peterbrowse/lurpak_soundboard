@@ -1,0 +1,265 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 10px;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clearfix {
+  display: inline-block;
+  zoom: 1;
+  *display: inline; }
+
+html[xmlns] .clearfix {
+  display: block; }
+
+* html .clearfix {
+  height: 1%; }
+
+a {
+  outline: 0; }
+
+object, embed {
+  outline: 0; }
+
+input::-moz-focus-inner {
+  border: 0; }
+
+* {
+  font-family: 'Montserrat', sans-serif; }
+
+html, body {
+  background-color: #000000; }
+
+.container, .container__inner {
+  height: 100vh; }
+
+.scene {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none; }
+
+.scene__preloader, .scene__stage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; }
+  .scene__preloader .preloader_element, .scene__stage .preloader_element {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: flex-end; }
+    .scene__preloader .preloader_element p, .scene__stage .preloader_element p {
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 37px;
+      color: #fff;
+      -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(transparent, transparent), url("../imgs/silver_oil_font_texture_small.gif") repeat;
+      background: -o-linear-gradient(transparent, transparent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      align-content: flex-end; }
+  .scene__preloader .preloader_element__top, .scene__preloader .preloader_element__bottom, .scene__stage .preloader_element__top, .scene__stage .preloader_element__bottom {
+    background-color: #000000;
+    height: 100%;
+    flex-basis: auto; }
+  .scene__preloader .preloader_element__middle, .scene__stage .preloader_element__middle {
+    height: 10px;
+    text-align: right;
+    display: block; }
+    .scene__preloader .preloader_element__middle .preloader__progress_bar, .scene__stage .preloader_element__middle .preloader__progress_bar {
+      height: 5px;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.7);
+      right: 0;
+      position: absolute;
+      -webkit-transition: width 0.1s ease-in-out;
+      -moz-transition: width 0.1s ease-in-out;
+      -o-transition: width 0.1s ease-in-out;
+      transition: width 0.1s ease-in-out; }
+
+.scene__time, .scene__date, .scene__title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  text-align: center; }
+  .scene__time a, .scene__time p, .scene__date a, .scene__date p, .scene__title a, .scene__title p {
+    font-size: 30vw;
+    font-weight: 700;
+    margin: auto;
+    display: none; }
+    .scene__time a span, .scene__time p span, .scene__date a span, .scene__date p span, .scene__title a span, .scene__title p span {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit; }
+    .scene__time a span.back_1, .scene__time p span.back_1, .scene__date a span.back_1, .scene__date p span.back_1, .scene__title a span.back_1, .scene__title p span.back_1 {
+      color: #ffffff;
+      -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(transparent, transparent), url("../imgs/silver_oil_font_texture_large_one.gif") no-repeat;
+      background: -o-linear-gradient(transparent, transparent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-size: cover; }
+    .scene__time a span.back_2, .scene__time p span.back_2, .scene__date a span.back_2, .scene__date p span.back_2, .scene__title a span.back_2, .scene__title p span.back_2 {
+      color: #ffffff;
+      -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(transparent, transparent), url("../imgs/silver_oil_font_texture_large_two.gif") no-repeat;
+      background: -o-linear-gradient(transparent, transparent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-size: cover; }
+    .scene__time a span.back_3, .scene__time p span.back_3, .scene__date a span.back_3, .scene__date p span.back_3, .scene__title a span.back_3, .scene__title p span.back_3 {
+      color: #ffffff;
+      -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(transparent, transparent), url("../imgs/silver_oil_font_texture_large_three.gif") no-repeat;
+      background: -o-linear-gradient(transparent, transparent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-size: cover; }
+    .scene__time a span.back_4, .scene__time p span.back_4, .scene__date a span.back_4, .scene__date p span.back_4, .scene__title a span.back_4, .scene__title p span.back_4 {
+      color: #ffffff;
+      -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(transparent, transparent), url("../imgs/silver_oil_font_texture_large_four.gif") no-repeat;
+      background: -o-linear-gradient(transparent, transparent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-size: cover; }
+
+.scene__date p {
+  font-size: 23vw; }
+
+.scene__title .title_holder {
+  width: 100%; }
+
+.scene__title a, .scene__title p {
+  font-size: 6vw;
+  width: 100%;
+  line-height: 7vw; }
+  .scene__title a span.back_1,
+  .scene__title a span.back_2,
+  .scene__title a span.back_3,
+  .scene__title a span.back_4, .scene__title p span.back_1,
+  .scene__title p span.back_2,
+  .scene__title p span.back_3,
+  .scene__title p span.back_4 {
+    background-size: 200% 200%; }
+
+.scene__title p {
+  margin-bottom: 80px; }
+
+.scene__title a {
+  cursor: pointer;
+  border-bottom: 8px solid #FFF;
+  border-image: url("../imgs/silver_oil_font_texture_large_three.gif") 8; }
+  @media (min-width: 481px) and (max-width: 700px) {
+    .scene__title a {
+      border-bottom-width: 6px; } }
+  @media (max-width: 480px) {
+    .scene__title a {
+      border-bottom-width: 4px; } }
+
+.scene__stage .stage_element {
+  display: flex;
+  width: 100%;
+  text-align: center; }
+  .scene__stage .stage_element .stage_element__content {
+    width: 100%;
+    height: 100%;
+    background-color: #000000; }
+
+.scene__stage .stage_element__top,
+.scene__stage .stage_element__bottom {
+  height: 100%;
+  flex-basis: auto; }
+
+.scene__stage .stage_element__top {
+  align-items: flex-start; }
+
+.scene__stage .stage_element__bottom {
+  align-items: flex-end; }
+
+#bg_canvas {
+  display: none;
+  background-color: #000000;
+  background-image: url("../imgs/silver_oil_texture.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; }
+
+.canvas_flip {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
