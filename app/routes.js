@@ -7,7 +7,7 @@ module.exports = function(app) {
 		
 		res.render('index', {
 			title: "Lurpak - Soundboard",
-			number_of_sounds: number_of_sounds;
+			number_of_sounds: number_of_sounds
 		});
 	});
 }

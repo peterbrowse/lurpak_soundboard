@@ -39,7 +39,7 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 
 //Set up routes
-require('./app/routes.js')(app, common);
+require('./app/routes.js')(app);
 
 var listener = app.listen(process.env.PORT || 8080, function () {
 	console.log("Info: 'Summer is Gone' listening on port " + listener.address().port + " in " + process.env.NODE_ENV + " mode.");

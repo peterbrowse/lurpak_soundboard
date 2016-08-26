@@ -34,8 +34,7 @@ function sound_init(){
 	function preload(){
 		var loader_one = new PxLoader();
 		
-		
-		loader_one.addSound(first_track_id,track_url_list[0]);
+		//loader_one.addSound(first_track_id,track_url_list[0]);
 		
 		loader_one.addProgressListener(function(e) { 
 			if(debug){
