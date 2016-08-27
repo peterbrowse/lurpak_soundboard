@@ -1,9 +1,10 @@
 var debug = false,
-	audio_debug = false,
+	audio_debug = true,
 	loader_one,
 	first_loaded = false,
 	fade_in = 1000,
-	fade_out = 600;
+	fade_out = 600,
+	sounds = [];
 
 $(document).ready(function(){
 	sound_init();
@@ -12,11 +13,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 		var id_to_play = $(this).attr("id");
+		var id_in_array = parseInt(id_to_play.replace ( /[^\d.]/g, '' ));
 		
-		var sound = soundManager.getSoundById(id_to_play);
-		sound.play({
+		sounds[id_in_array] = soundManager.getSoundById(id_to_play);
+		sounds[id_in_array].play({
 			onplay: function(){
-				$('li').removeClass('playing');
 				$('#' + this.id).addClass("playing");
 			},
 			multiShotEvents: false,
