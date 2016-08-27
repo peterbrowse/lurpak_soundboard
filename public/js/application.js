@@ -4,13 +4,18 @@ var debug = false,
 	first_loaded = false,
 	fade_in = 1000,
 	fade_out = 600,
-	sounds = [];
+	sounds = [],
+	bg_audio;
 
 $(document).ready(function(){
 	sound_init();
 	
 	$('li').on("click", function(e){
 		e.preventDefault();
+		
+		if(bg_audio.playState == 0) {
+			bg_audio.play();
+		}
 		
 		var id_to_play = $(this).attr("id");
 		var id_in_array = parseInt(id_to_play.replace ( /[^\d.]/g, '' ));
@@ -55,6 +60,21 @@ function sound_init(){
 		var loader_one = new PxLoader();
 		
 		loader_one.addImage("/imgs/mushroom_bg.jpg");
+		
+		if(Modernizr.audio.mp3) {
+			var audio_format_key = ".mp3";
+		} else if(Modernizr.audio.ogg) {
+			var audio_format_key = ".ogg";
+		}
+		
+		bg_audio = soundManager.createSound({
+			id: 'bg_audio_track',
+			url: '/audio/bg_audio' + audio_format_key,
+			volume: 40,
+			autoLoad: true,
+			autoPlay: true,
+			loops: 5
+		});
 		
 		for (i = 0; i < number_of_songs; i++) {
 			var track_id = "track_" + (i+1);
