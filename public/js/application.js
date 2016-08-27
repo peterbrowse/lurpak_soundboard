@@ -1,5 +1,5 @@
-var debug = true,
-	audio_debug = true,
+var debug = false,
+	audio_debug = false,
 	loader_one,
 	first_loaded = false,
 	fade_in = 1000,
@@ -13,11 +13,13 @@ $(document).ready(function(){
 		
 		var id_to_play = $(this).attr("id");
 		
-		soundManager.play(id_to_play, {
+		var sound = soundManager.getSoundById(id_to_play);
+		sound.play({
 			onplay: function(){
+				$('li').removeClass('playing');
 				$('#' + this.id).addClass("playing");
 			},
-			multiShotEvents: true,
+			multiShotEvents: false,
 			onfinish: function() {
 				$('#' + this.id).removeClass("playing");
 			}
@@ -79,22 +81,11 @@ function sound_init(){
 		    $('.preloader').fadeOut(fade_out, function(){
 				$('.soundboard').css("display", "flex").hide().fadeIn(fade_in);  
 				
-				if(!isMobile) {
+				if(!isMobile.apple.phone) {
 					var random_track = "track_" + getRandomInt(1, number_of_songs);
-							
-					soundManager.play(random_track, {
-						onplay: function(){
-							$('#' + this.id).addClass("playing");
-						},
-						multiShotEvents: true,
-						onfinish: function() {
-							$('#' + this.id).removeClass("playing");
-						}
-					});
-				} 
+					$('#' + random_track).click();
+				}
 		    });
-		    
-		    
 		    
 		    if(debug){
 				console.log("Loader One: Completed");
