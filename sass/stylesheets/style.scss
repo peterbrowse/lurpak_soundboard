@@ -71,7 +71,7 @@ section.soundboard {
 		flex-direction: row;
 		
 		.buttons {
-			max-width: 60%;
+			max-width: 860px;
 			margin: auto;
 			width: 100%;
 			text-align: center;	
@@ -104,14 +104,6 @@ section.soundboard {
 				}
 			}
 			
-			@media (max-width: 720px) and (min-width: 481px) {
-				max-width: 80%;
-			}
-			
-			@media (max-width: 480px) {
-				max-width: 90%;
-			}
-			
 			li.playing {
 				background: rgba(255, 255, 255, 0.3);
 				border: 1px solid transparent;
@@ -124,6 +116,7 @@ section.soundboard {
 		max-width: 20%;
 		margin: auto;
 		align-content: flex-end;
+		margin-bottom: $outter-spacing;
 		
 		@media (max-width: 600px) and (min-width: 481px) {
 			max-width: 30%;
@@ -131,6 +124,7 @@ section.soundboard {
 		
 		@media (max-width: 480px) {
 			max-width: 60%;
+			margin-bottom: $outter-spacing / 2;
 		}
 	}
 }
