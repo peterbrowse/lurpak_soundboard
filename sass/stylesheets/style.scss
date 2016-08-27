@@ -116,7 +116,6 @@ section.soundboard {
 		max-width: 20%;
 		margin: auto;
 		align-content: flex-end;
-		margin-bottom: $outter-spacing;
 		
 		@media (max-width: 600px) and (min-width: 481px) {
 			max-width: 30%;
@@ -124,7 +123,6 @@ section.soundboard {
 		
 		@media (max-width: 480px) {
 			max-width: 60%;
-			margin-bottom: $outter-spacing / 2;
 		}
 	}
 }

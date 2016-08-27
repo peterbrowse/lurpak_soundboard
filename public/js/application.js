@@ -2,8 +2,8 @@ var debug = false,
 	audio_debug = false,
 	loader_one,
 	first_loaded = false,
-	fade_in = 1000,
-	fade_out = 600,
+	fade_in = 1500,
+	fade_out = 1000,
 	sounds = [],
 	bg_audio;
 
