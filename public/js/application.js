@@ -2,6 +2,7 @@ var debug = false,
 	audio_debug = false,
 	loader_one,
 	first_loaded = false,
+	play_random = false,
 	fade_in = 1500,
 	fade_out = 1000,
 	sounds = [],
@@ -69,8 +70,8 @@ function sound_init(){
 		
 		bg_audio = soundManager.createSound({
 			id: 'bg_audio_track',
-			url: '/audio/bg_audio' + audio_format_key,
-			volume: 40,
+			url: '/audio/spirit_in_the_sky' + audio_format_key,
+			volume: 10,
 			autoLoad: true,
 			autoPlay: true,
 			loops: 5
@@ -102,7 +103,7 @@ function sound_init(){
 		    $('.preloader').fadeOut(fade_out, function(){
 				$('.soundboard').css("display", "flex").hide().fadeIn(fade_in);  
 				
-				if(!isMobile.apple.phone) {
+				if(!isMobile.apple.phone && play_random) {
 					var random_track = "track_" + getRandomInt(1, number_of_songs);
 					$('#' + random_track).click();
 				}
